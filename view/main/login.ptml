@@ -1,0 +1,4 @@
+
+<response status="ok">
+  <user uid="<?php echo($this->uid)?>"></user>
+</response>

@@ -1,0 +1,25 @@
+
+<response status="ok">
+  <?php foreach($this->rooms as $room):?>
+    <room
+      id="<?php echo($room['id'])?>"
+      title="<?php echo($room['title'])?>"
+      ctime="<?php echo($room['ctime'])?>"
+      utime="<?php echo($room['utime'])?>"
+    >
+      <?php
+        if(isset($room['messages'])):
+          foreach($room['messages'] as $message):?>
+          <message
+            id="<?php echo($message['id'])?>"
+            user_id="<?php echo($message['user_id'])?>"
+            user_name="<?php echo($message['user_name'])?>"
+            ctime="<?php echo($message['ctime'])?>"
+            utime="<?php echo($message['utime'])?>"
+          ><?php echo($message['content'])?></message>
+        <?php endforeach;
+        endif;
+      ?>
+    </room>
+  <?php endforeach;?>
+</response>

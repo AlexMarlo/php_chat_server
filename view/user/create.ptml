@@ -1,0 +1,9 @@
+
+<response status="ok">
+  <user
+    id="<?php echo($this->user['id'])?>"
+    name="<?php echo($this->user['name'])?>"
+    ctime="<?php echo($this->user['ctime'])?>"
+    utime="<?php echo($this->user['utime'])?>"
+  />
+</response>

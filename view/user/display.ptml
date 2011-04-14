@@ -1,0 +1,6 @@
+<html>
+  <body>
+    <h1>C# + PHP Chat</h1>
+    <h1><?php echo $this->test; ?></h1>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+<?php var_dump($this->post); ?>
+
+<response status="ok">
+</response>

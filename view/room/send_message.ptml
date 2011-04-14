@@ -1,0 +1,2 @@
+
+<response status="ok" id="<?php echo($this->message_id)?>" />

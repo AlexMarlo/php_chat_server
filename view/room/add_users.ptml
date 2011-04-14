@@ -1,0 +1,6 @@
+
+<response
+  status="ok"
+  room_id="<?php echo($this->room_id)?>"
+  count="<?php echo($this->count)?>"
+/>

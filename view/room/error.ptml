@@ -1,0 +1,4 @@
+
+<response status="error">
+  <message><?php echo($this->message)?></message>
+</response>

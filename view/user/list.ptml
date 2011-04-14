@@ -1,0 +1,11 @@
+
+<response status="ok">
+  <?php foreach($this->users as $user):?>
+    <user
+      id="<?php echo($user['id'])?>"
+      name="<?php echo($user['name'])?>"
+      ctime="<?php echo($user['ctime'])?>"
+      utime="<?php echo($user['utime'])?>"
+    />
+  <?php endforeach;?>
+</response>

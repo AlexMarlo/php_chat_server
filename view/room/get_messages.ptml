@@ -1,0 +1,12 @@
+
+<response status="ok">
+  <?php foreach($this->messages as $message):?>
+    <message
+      id="<?php echo($message['id'])?>"
+      user_id="<?php echo($message['user_id'])?>"
+      user_name="<?php echo($message['user_name'])?>"
+      ctime="<?php echo($message['ctime'])?>"
+      utime="<?php echo($message['utime'])?>"
+    ><?php echo($message['content'])?></message>
+  <?php endforeach;?>
+</response>

@@ -1,0 +1,8 @@
+
+<response status="ok">
+  <room
+    id="<?php echo($this->room_id)?>"
+    title="<?php echo($this->title)?>"
+    author_id="<?php echo($this->author_id)?>"
+  />
+</response>
