@@ -33,22 +33,28 @@ class UserController extends Controller
   function actionCreate()
   {
     $this->user = array();
-    if(isset($_POST['name']) && isset($_POST['login']) && isset($_POST['pass']) && isset($_POST['retry_pass']))
+    if(isset($_POST['name']) && isset($_POST['login']) && isset($_POST['pass']) && isset($_POST['pass_repeat']))
     {
       $this->name = $_POST['name'];
       $this->login = $_POST['login'];
       $this->pass = $_POST['pass'];
-      $this->retry_pass = $_POST['retry_pass'];
+      $this->pass_repeat = $_POST['pass_repeat'];
     }
     else
     {
-      $this->message = 'Bad value for: name, login, pass, retry_pass.';
+      $this->message = 'Bad value for: name, login, pass, pass_repeat.';
       $this->_view('error');
     }
 
-    if($this->pass != $this->retry_pass)
+    if($this->pass != $this->pass_repeat)
     {
-      $this->message = 'pass not match with retry_pass.';
+      $this->message = 'pass not match with pass_repeat.';
+      $this->_view('error');
+    }
+
+    if(User :: findOne("User", "*", "`login` = '{$this->login}'"))
+    {
+      $this->message = 'User already exists! Enter enather login!';
       $this->_view('error');
     }
 
@@ -58,7 +64,7 @@ class UserController extends Controller
         'password' => "{$this->pass}",
       );
 
-    if(!$this->user_id = User :: insert("User", $fields))
+    if($this->user_id = User :: insert("User", $fields))
     {
       $this->user = $fields;
       $this->user['id'] = $this->user_id;
